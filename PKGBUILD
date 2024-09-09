@@ -7,18 +7,15 @@ pkgdesc="Savage: The Battle for Newerth is an online multiplayer team-based FPS/
 url="http://www.newerth.com/"
 arch=('i686' 'x86_64')
 license=('custom')
-if [ "${CARCH}" = "x86_64" ]; then
-    depends=('lib32-sdl' 'lib32-mesa' 'lib32-libjpeg6' 'lib32-e2fsprogs'
-             'lib32-glib2' 'lib32-pcre' 'lib32-zlib' 'lib32-freetype2'
-             'lib32-libxdamage')
-else
-    depends=('libgl' 'sdl' 'glib2' 'mesa' 'libjpeg6' 'libpng' 'libidn'
-             'e2fsprogs' 'curl' 'openssl')
-fi
+depends_x86_64=('lib32-sdl' 'lib32-mesa' 'lib32-libjpeg6' 'lib32-e2fsprogs'
+         'lib32-glib2' 'lib32-pcre' 'lib32-zlib' 'lib32-freetype2'
+         'lib32-libxdamage')
+depends_i686=('libgl' 'sdl' 'glib2' 'mesa' 'libjpeg6' 'libpng' 'libidn'
+         'e2fsprogs' 'curl' 'openssl')
 install=savage.install
 source=('savage.i686.launcher' 'savage.x86_64.launcher' 'savage.desktop' 'icon.xpm' \
 'lin-client-auth-patch.zip::http://www.newerth.com/?id=downloads&op=downloadFile&file=lin-client-auth-patch.zip&mirrorid=1' \
-'SFE-Standalone.tar.gz::http://www.newerth.com/?id=downloads&op=downloadFile&file=SFE-Standalone.tar.gz&mirrorid=1')
+'https://aur.slashbunny.com/savage/SFE-Standalone.tar.gz')
 sha256sums=('401f458a9ff66473e329ce7f5363459877455300e5c6ba77e934e9423d7436e8'
             '2990284957c354d1f7bed8a39ffa5b0c3c76e59c366ceb976845419912940b23'
             '837a9df33bd539b3ac27549be4773b4e6bc5576247ce5fea9bb40bec5fadfdfe'
